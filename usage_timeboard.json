@@ -1,0 +1,250 @@
+{
+    "description": "created by benjamin.burns@datadoghq.com",
+    "graphs": [
+        {
+            "definition": {
+                "autoscale": true,
+                "requests": [
+                    {
+                        "aggregator": "avg",
+                        "conditional_formats": [],
+                        "q": "max:datadog.usage.container_count{*}",
+                        "style": {
+                            "palette": "dog_classic",
+                            "type": "solid",
+                            "width": "normal"
+                        },
+                        "type": "line"
+                    },
+                    {
+                        "q": "avg:datadog.usage.container_count{*}",
+                        "style": {
+                            "palette": "dog_classic",
+                            "type": "solid",
+                            "width": "normal"
+                        },
+                        "type": "line"
+                    }
+                ],
+                "status": "done",
+                "viz": "timeseries"
+            },
+            "title": "Container Count"
+        },
+        {
+            "definition": {
+                "autoscale": true,
+                "requests": [
+                    {
+                        "aggregator": "avg",
+                        "conditional_formats": [],
+                        "q": "max:datadog.usage.aws_host_count{*}",
+                        "style": {
+                            "palette": "dog_classic",
+                            "type": "solid",
+                            "width": "normal"
+                        },
+                        "type": "line"
+                    },
+                    {
+                        "q": "avg:datadog.usage.aws_host_count{*}",
+                        "style": {
+                            "palette": "dog_classic",
+                            "type": "solid",
+                            "width": "normal"
+                        },
+                        "type": "line"
+                    }
+                ],
+                "status": "done",
+                "viz": "timeseries"
+            },
+            "title": "AWS Host Count"
+        },
+        {
+            "definition": {
+                "autoscale": true,
+                "requests": [
+                    {
+                        "aggregator": "avg",
+                        "conditional_formats": [],
+                        "q": "max:datadog.usage.host_count{*}",
+                        "style": {
+                            "palette": "dog_classic",
+                            "type": "solid",
+                            "width": "normal"
+                        },
+                        "type": "line"
+                    },
+                    {
+                        "q": "avg:datadog.usage.host_count{*}",
+                        "style": {
+                            "palette": "dog_classic",
+                            "type": "solid",
+                            "width": "normal"
+                        },
+                        "type": "line"
+                    }
+                ],
+                "status": "done",
+                "viz": "timeseries"
+            },
+            "title": "Total Host Count"
+        },
+        {
+            "definition": {
+                "autoscale": true,
+                "requests": [
+                    {
+                        "aggregator": "avg",
+                        "conditional_formats": [],
+                        "q": "max:datadog.usage.apm_host_count{*}",
+                        "style": {
+                            "palette": "dog_classic",
+                            "type": "solid",
+                            "width": "normal"
+                        },
+                        "type": "line"
+                    },
+                    {
+                        "q": "avg:datadog.usage.apm_host_count{*}",
+                        "style": {
+                            "palette": "dog_classic",
+                            "type": "solid",
+                            "width": "normal"
+                        },
+                        "type": "line"
+                    }
+                ],
+                "status": "done",
+                "viz": "timeseries"
+            },
+            "title": "APM Host Count"
+        },
+        {
+            "definition": {
+                "autoscale": true,
+                "requests": [
+                    {
+                        "aggregator": "avg",
+                        "conditional_formats": [],
+                        "q": "max:datadog.usage.gcp_host_count{*}",
+                        "style": {
+                            "palette": "dog_classic",
+                            "type": "solid",
+                            "width": "normal"
+                        },
+                        "type": "line"
+                    },
+                    {
+                        "q": "avg:datadog.usage.gcp_host_count{*}",
+                        "style": {
+                            "palette": "dog_classic",
+                            "type": "solid",
+                            "width": "normal"
+                        },
+                        "type": "line"
+                    }
+                ],
+                "status": "done",
+                "viz": "timeseries"
+            },
+            "title": "GCP Host Count"
+        },
+        {
+            "definition": {
+                "autoscale": true,
+                "requests": [
+                    {
+                        "aggregator": "avg",
+                        "conditional_formats": [],
+                        "q": "max:datadog.usage.agent_host_count{*}",
+                        "style": {
+                            "palette": "dog_classic",
+                            "type": "solid",
+                            "width": "normal"
+                        },
+                        "type": "line"
+                    },
+                    {
+                        "q": "avg:datadog.usage.agent_host_count{*}",
+                        "style": {
+                            "palette": "dog_classic",
+                            "type": "solid",
+                            "width": "normal"
+                        },
+                        "type": "line"
+                    }
+                ],
+                "status": "done",
+                "viz": "timeseries"
+            },
+            "title": "Datadog Agent Host Count"
+        },
+        {
+            "definition": {
+                "autoscale": true,
+                "requests": [
+                    {
+                        "aggregator": "avg",
+                        "conditional_formats": [],
+                        "q": "max:datadog.usage.num_custom_timeseries{*}",
+                        "style": {
+                            "palette": "dog_classic",
+                            "type": "solid",
+                            "width": "normal"
+                        },
+                        "type": "line"
+                    },
+                    {
+                        "q": "avg:datadog.usage.num_custom_timeseries{*}",
+                        "style": {
+                            "palette": "dog_classic",
+                            "type": "solid",
+                            "width": "normal"
+                        },
+                        "type": "line"
+                    }
+                ],
+                "status": "done",
+                "viz": "timeseries"
+            },
+            "title": "Custom Metric Count"
+        },
+        {
+            "definition": {
+                "requests": [
+                    {
+                        "conditional_formats": [],
+                        "q": "top(avg:datadog.usage.top_metrics_avg_hour{*} by {metric_name}, 10, 'mean', 'desc')",
+                        "style": {
+                            "palette": "dog_classic"
+                        }
+                    }
+                ],
+                "status": "done",
+                "viz": "toplist"
+            },
+            "title": "Top Custom Metrics by Average Submission Hour"
+        },
+        {
+            "definition": {
+                "requests": [
+                    {
+                        "conditional_formats": [],
+                        "q": "top(max:datadog.usage.top_metrics_max_hour{*} by {metric_name}, 20, 'mean', 'desc')",
+                        "style": {
+                            "palette": "dog_classic"
+                        }
+                    }
+                ],
+                "status": "done",
+                "viz": "toplist"
+            },
+            "title": "Top Custom Metrics by Maximum Submission Hour"
+        }
+    ],
+    "read_only": false,
+    "template_variables": [],
+    "title": "Usage Timeboard"
+}
