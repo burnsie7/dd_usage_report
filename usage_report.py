@@ -22,7 +22,7 @@ initialize(**options)
 USAGE_URL = 'https://app.datadoghq.com/api/v1/usage/'
 DD_KEYS = '?api_key=' + DD_API_KEY + '&application_key=' + DD_APP_KEY
 
-def format_standard_metrics, start_hr):
+def format_standard_metrics(metrics, start_hr):
     metric_list = []
     for metric_dict in metrics:
         try:
@@ -71,23 +71,27 @@ def get_usage_metrics(url):
         print('The response did not contain JSON data')
     return usage_metrics
 
-def submit_metrics(metric_list):
-    api.Metric.send(metric_list)
-
-def update_standard_metrics(endpoint):
+def build_standard_url(endpoint):
     # Example date format for hour: 2018-03-14T09
     start = datetime.datetime.now() - datetime.timedelta(hours=24)
     start_hr = start.strftime('%Y-%m-%dT%H')
     end = datetime.datetime.now() - datetime.timedelta(hours=23)
     end_hr = end.strftime('%Y-%m-%dT%H')
-    url = USAGE_URL + 'hosts' + DD_KEYS + '&start_hr=' + start_hr + '&end_hr=' + end_hr
+    url = USAGE_URL + endpoint + DD_KEYS + '&start_hr=' + start_hr + '&end_hr=' + end_hr
+    return url, start_hr
 
+def update_standard_metrics(endpoint):
+    # Build url
+    url, start_hr = build_standard_url(endpoint)
     # Get usage metrics from Datadog
     metrics = get_usage_metrics(url)
     # Convert metrics to format for submitting
     metrics_list = format_standard_metrics(metrics, start_hr)
     # Submit metrics
-    submit_metrics(metrics_list)
+    if len(metrics_list):
+        submit_metrics(metrics_list)
+    else:
+        print('No usage metrics available for endpiont: {}'.format(endpoint))
 
 def update_toplist_metrics():
     now = datetime.datetime.now()
@@ -95,15 +99,28 @@ def update_toplist_metrics():
     metrics = get_usage_metrics(url)
     metrics_list = format_toplist_metrics(metrics)
     # Submit metrics
-    submit_metrics(metrics_list)
+    if len(metrics_list):  # TODO: Move this logic
+        submit_metrics(metrics_list)
+    else:
+        print('No toplist usage metrics available')
+
+def submit_metrics(metric_list):
+    api.Metric.send(metric_list)
 
 # It looks like this data is processed from the previous day only.  So there must be a job that is running nightly to create these metrics.  We should just pull 24 hours behind by default.
 
-# host data
-update_standard_metrics('hosts')
+class MainClass(object):
 
-# hourly usage data
-update_standard_metrics('timeseries')
+    def __init__(self, *args, **kwargs):
+        pass
 
-#top metrics
-update_toplist_metrics()
+    @classmethod
+    def main(self):
+        # host data
+        update_standard_metrics('hosts')
+        # hourly usage data
+        update_standard_metrics('timeseries')
+        #top metrics
+        update_toplist_metrics()
+
+MainClass().main()
