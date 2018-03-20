@@ -7,6 +7,14 @@ import simplejson
 
 from datadog import initialize, api
 
+"""
+This script can be installed as a cron job to retrieve usage metrics.
+We recommend running no more frequently than every 15 minutes.
+Metrics API is currently in Beta and metrics are delayed by 48 hours.
+Example cron entry:
+*/15 * * * * /usr/bin/python /home/username/dd_usage_report/usage_report.py
+"""
+
 DD_API_KEY = os.environ.get('DD_API_KEY')
 DD_APP_KEY = os.environ.get('DD_APP_KEY')
 
@@ -73,9 +81,9 @@ def get_usage_metrics(url):
 
 def build_standard_url(endpoint):
     # Example date format for hour: 2018-03-14T09
-    start = datetime.datetime.now() - datetime.timedelta(hours=24)
+    start = datetime.datetime.now() - datetime.timedelta(hours=48)
     start_hr = start.strftime('%Y-%m-%dT%H')
-    end = datetime.datetime.now() - datetime.timedelta(hours=23)
+    end = datetime.datetime.now() - datetime.timedelta(hours=47)
     end_hr = end.strftime('%Y-%m-%dT%H')
     url = USAGE_URL + endpoint + DD_KEYS + '&start_hr=' + start_hr + '&end_hr=' + end_hr
     return url, start_hr

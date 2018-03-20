@@ -1,0 +1,637 @@
+{
+    "board_title": "Usage Screenboard",
+    "description": "",
+    "template_variables": [],
+    "widgets": [
+        {
+            "board_id": 307156,
+            "height": 14,
+            "isShared": false,
+            "legend": false,
+            "legend_size": "0",
+            "tile_def": {
+                "autoscale": true,
+                "requests": [
+                    {
+                        "aggregator": "avg",
+                        "conditional_formats": [],
+                        "q": "max:datadog.usage.container_count{*}",
+                        "style": {
+                            "palette": "dog_classic",
+                            "type": "solid",
+                            "width": "normal"
+                        },
+                        "type": "bars"
+                    },
+                    {
+                        "q": "avg:datadog.usage.container_count{*}",
+                        "style": {
+                            "palette": "dog_classic",
+                            "type": "solid",
+                            "width": "normal"
+                        },
+                        "type": "line"
+                    }
+                ],
+                "status": "done",
+                "viz": "timeseries"
+            },
+            "timeframe": "1w",
+            "title": true,
+            "title_align": "left",
+            "title_size": 16,
+            "title_text": "Container Count",
+            "type": "timeseries",
+            "width": 27,
+            "x": 27,
+            "y": 28
+        },
+        {
+            "board_id": 307156,
+            "height": 15,
+            "isShared": false,
+            "legend": false,
+            "legend_size": "0",
+            "tile_def": {
+                "autoscale": true,
+                "requests": [
+                    {
+                        "aggregator": "avg",
+                        "conditional_formats": [],
+                        "q": "max:datadog.usage.aws_host_count{*}",
+                        "style": {
+                            "palette": "dog_classic",
+                            "type": "solid",
+                            "width": "normal"
+                        },
+                        "type": "bars"
+                    },
+                    {
+                        "q": "avg:datadog.usage.aws_host_count{*}",
+                        "style": {
+                            "palette": "dog_classic",
+                            "type": "solid",
+                            "width": "normal"
+                        },
+                        "type": "line"
+                    }
+                ],
+                "status": "done",
+                "viz": "timeseries"
+            },
+            "timeframe": "1w",
+            "title": true,
+            "title_align": "left",
+            "title_size": 16,
+            "title_text": "AWS Host Count",
+            "type": "timeseries",
+            "width": 26,
+            "x": 0,
+            "y": 63
+        },
+        {
+            "board_id": 307156,
+            "height": 14,
+            "isShared": false,
+            "legend": false,
+            "legend_size": "0",
+            "tile_def": {
+                "autoscale": true,
+                "requests": [
+                    {
+                        "aggregator": "avg",
+                        "conditional_formats": [],
+                        "q": "max:datadog.usage.host_count{*}",
+                        "style": {
+                            "palette": "dog_classic",
+                            "type": "solid",
+                            "width": "normal"
+                        },
+                        "type": "bars"
+                    },
+                    {
+                        "q": "avg:datadog.usage.host_count{*}",
+                        "style": {
+                            "palette": "dog_classic",
+                            "type": "solid",
+                            "width": "normal"
+                        },
+                        "type": "line"
+                    }
+                ],
+                "status": "done",
+                "viz": "timeseries"
+            },
+            "timeframe": "1w",
+            "title": true,
+            "title_align": "left",
+            "title_size": 16,
+            "title_text": "Total Host Count",
+            "type": "timeseries",
+            "width": 26,
+            "x": 0,
+            "y": 28
+        },
+        {
+            "board_id": 307156,
+            "height": 15,
+            "isShared": false,
+            "legend": false,
+            "legend_size": "0",
+            "tile_def": {
+                "autoscale": true,
+                "requests": [
+                    {
+                        "aggregator": "avg",
+                        "conditional_formats": [],
+                        "q": "max:datadog.usage.apm_host_count{*}",
+                        "style": {
+                            "palette": "dog_classic",
+                            "type": "solid",
+                            "width": "normal"
+                        },
+                        "type": "bars"
+                    },
+                    {
+                        "q": "avg:datadog.usage.apm_host_count{*}",
+                        "style": {
+                            "palette": "dog_classic",
+                            "type": "solid",
+                            "width": "normal"
+                        },
+                        "type": "line"
+                    }
+                ],
+                "status": "done",
+                "viz": "timeseries"
+            },
+            "timeframe": "1w",
+            "title": true,
+            "title_align": "left",
+            "title_size": 16,
+            "title_text": "APM Host Count",
+            "type": "timeseries",
+            "width": 27,
+            "x": 28,
+            "y": 45
+        },
+        {
+            "board_id": 307156,
+            "height": 15,
+            "isShared": false,
+            "legend": false,
+            "legend_size": "0",
+            "tile_def": {
+                "autoscale": true,
+                "requests": [
+                    {
+                        "aggregator": "avg",
+                        "conditional_formats": [],
+                        "q": "max:datadog.usage.gcp_host_count{*}",
+                        "style": {
+                            "palette": "dog_classic",
+                            "type": "solid",
+                            "width": "normal"
+                        },
+                        "type": "bars"
+                    },
+                    {
+                        "q": "avg:datadog.usage.gcp_host_count{*}",
+                        "style": {
+                            "palette": "dog_classic",
+                            "type": "solid",
+                            "width": "normal"
+                        },
+                        "type": "line"
+                    }
+                ],
+                "status": "done",
+                "viz": "timeseries"
+            },
+            "timeframe": "1w",
+            "title": true,
+            "title_align": "left",
+            "title_size": 16,
+            "title_text": "GCP Host Count",
+            "type": "timeseries",
+            "width": 27,
+            "x": 27,
+            "y": 63
+        },
+        {
+            "board_id": 307156,
+            "height": 15,
+            "isShared": false,
+            "legend": false,
+            "legend_size": "0",
+            "tile_def": {
+                "autoscale": true,
+                "requests": [
+                    {
+                        "aggregator": "avg",
+                        "conditional_formats": [],
+                        "q": "max:datadog.usage.agent_host_count{*}",
+                        "style": {
+                            "palette": "dog_classic",
+                            "type": "solid",
+                            "width": "normal"
+                        },
+                        "type": "bars"
+                    },
+                    {
+                        "q": "avg:datadog.usage.agent_host_count{*}",
+                        "style": {
+                            "palette": "dog_classic",
+                            "type": "solid",
+                            "width": "normal"
+                        },
+                        "type": "line"
+                    }
+                ],
+                "status": "done",
+                "viz": "timeseries"
+            },
+            "timeframe": "1w",
+            "title": true,
+            "title_align": "left",
+            "title_size": 16,
+            "title_text": "Datadog Agent Host Count",
+            "type": "timeseries",
+            "width": 26,
+            "x": 0,
+            "y": 45
+        },
+        {
+            "board_id": 307156,
+            "height": 13,
+            "isShared": false,
+            "legend": false,
+            "legend_size": "0",
+            "tile_def": {
+                "autoscale": true,
+                "requests": [
+                    {
+                        "aggregator": "avg",
+                        "conditional_formats": [],
+                        "q": "max:datadog.usage.num_custom_timeseries{*}",
+                        "style": {
+                            "palette": "dog_classic",
+                            "type": "solid",
+                            "width": "normal"
+                        },
+                        "type": "bars"
+                    },
+                    {
+                        "q": "avg:datadog.usage.num_custom_timeseries{*}",
+                        "style": {
+                            "palette": "dog_classic",
+                            "type": "solid",
+                            "width": "normal"
+                        },
+                        "type": "line"
+                    }
+                ],
+                "status": "done",
+                "viz": "timeseries"
+            },
+            "timeframe": "1w",
+            "title": true,
+            "title_align": "left",
+            "title_size": 16,
+            "title_text": "Custom Metric Submission Count by Hour",
+            "type": "timeseries",
+            "width": 73,
+            "x": 55,
+            "y": 12
+        },
+        {
+            "board_id": 307156,
+            "height": 50,
+            "isShared": false,
+            "legend": false,
+            "legend_size": "0",
+            "tile_def": {
+                "requests": [
+                    {
+                        "conditional_formats": [],
+                        "q": "top(avg:datadog.usage.top_metrics_avg_hour{*} by {metric_name}, 50, 'mean', 'desc')",
+                        "style": {
+                            "palette": "dog_classic"
+                        }
+                    }
+                ],
+                "status": "done",
+                "viz": "toplist"
+            },
+            "timeframe": "1mo",
+            "title": true,
+            "title_align": "left",
+            "title_size": 16,
+            "title_text": "Top 50 Custom Metrics by Average Submission Hour",
+            "type": "toplist",
+            "width": 36,
+            "x": 55,
+            "y": 28
+        },
+        {
+            "board_id": 307156,
+            "height": 50,
+            "isShared": false,
+            "legend": false,
+            "legend_size": "0",
+            "tile_def": {
+                "requests": [
+                    {
+                        "conditional_formats": [],
+                        "q": "top(max:datadog.usage.top_metrics_max_hour{*} by {metric_name}, 50, 'mean', 'desc')",
+                        "style": {
+                            "palette": "dog_classic"
+                        }
+                    }
+                ],
+                "status": "done",
+                "viz": "toplist"
+            },
+            "timeframe": "1mo",
+            "title": true,
+            "title_align": "left",
+            "title_size": 16,
+            "title_text": "Top 50 Custom Metrics by Maximum Submission Hour",
+            "type": "toplist",
+            "width": 36,
+            "x": 92,
+            "y": 28
+        },
+        {
+            "auto_refresh": false,
+            "bgcolor": "blue",
+            "board_id": 307156,
+            "font_size": "18",
+            "height": 5,
+            "html": "Hosts",
+            "isShared": false,
+            "refresh_every": 30000,
+            "text_align": "center",
+            "tick": false,
+            "tick_edge": "bottom",
+            "tick_pos": "50%",
+            "title": true,
+            "title_align": "left",
+            "title_size": 16,
+            "title_text": "",
+            "type": "note",
+            "width": 54,
+            "x": 0,
+            "y": 6
+        },
+        {
+            "autoscale": true,
+            "board_id": 307156,
+            "height": 5,
+            "isShared": false,
+            "legend": false,
+            "legend_size": "0",
+            "tile_def": {
+                "autoscale": false,
+                "precision": "0",
+                "requests": [
+                    {
+                        "aggregator": "last",
+                        "conditional_formats": [
+                            {
+                                "comparator": ">",
+                                "palette": "white_on_red",
+                                "value": null
+                            },
+                            {
+                                "comparator": ">=",
+                                "palette": "white_on_yellow",
+                                "value": null
+                            },
+                            {
+                                "comparator": "<",
+                                "palette": "white_on_green",
+                                "value": null
+                            }
+                        ],
+                        "q": "max:datadog.usage.host_count{*}",
+                        "style": {
+                            "palette": "dog_classic",
+                            "type": "solid",
+                            "width": "normal"
+                        },
+                        "type": null
+                    }
+                ],
+                "viz": "query_value"
+            },
+            "timeframe": "1d",
+            "title": true,
+            "title_align": "left",
+            "title_size": 16,
+            "title_text": "Total Host Count",
+            "type": "query_value",
+            "width": 26,
+            "x": 0,
+            "y": 12
+        },
+        {
+            "auto_refresh": false,
+            "bgcolor": "blue",
+            "board_id": 307156,
+            "font_size": "18",
+            "height": 5,
+            "html": "Metrics",
+            "isShared": false,
+            "refresh_every": 30000,
+            "text_align": "center",
+            "tick": false,
+            "tick_edge": "bottom",
+            "tick_pos": "50%",
+            "title": true,
+            "title_align": "left",
+            "title_size": 16,
+            "title_text": "",
+            "type": "note",
+            "width": 73,
+            "x": 55,
+            "y": 6
+        },
+        {
+            "autoscale": true,
+            "board_id": 307156,
+            "height": 5,
+            "isShared": false,
+            "legend": false,
+            "legend_size": "0",
+            "tile_def": {
+                "autoscale": false,
+                "precision": "0",
+                "requests": [
+                    {
+                        "aggregator": "last",
+                        "conditional_formats": [
+                            {
+                                "comparator": ">",
+                                "palette": "white_on_red",
+                                "value": null
+                            },
+                            {
+                                "comparator": ">=",
+                                "palette": "white_on_yellow",
+                                "value": null
+                            },
+                            {
+                                "comparator": "<",
+                                "palette": "white_on_green",
+                                "value": null
+                            }
+                        ],
+                        "q": "max:datadog.usage.container_count{*}",
+                        "style": {
+                            "palette": "dog_classic",
+                            "type": "solid",
+                            "width": "normal"
+                        },
+                        "type": null
+                    }
+                ],
+                "viz": "query_value"
+            },
+            "timeframe": "1d",
+            "title": true,
+            "title_align": "left",
+            "title_size": 16,
+            "title_text": "Container Count",
+            "type": "query_value",
+            "width": 27,
+            "x": 27,
+            "y": 12
+        },
+        {
+            "autoscale": true,
+            "board_id": 307156,
+            "height": 5,
+            "isShared": false,
+            "legend": false,
+            "legend_size": "0",
+            "tile_def": {
+                "autoscale": false,
+                "precision": "0",
+                "requests": [
+                    {
+                        "aggregator": "last",
+                        "conditional_formats": [
+                            {
+                                "comparator": ">",
+                                "palette": "white_on_red",
+                                "value": null
+                            },
+                            {
+                                "comparator": ">=",
+                                "palette": "white_on_yellow",
+                                "value": null
+                            },
+                            {
+                                "comparator": "<",
+                                "palette": "white_on_green",
+                                "value": null
+                            }
+                        ],
+                        "q": "max:datadog.usage.apm_host_count{*}",
+                        "style": {
+                            "palette": "dog_classic",
+                            "type": "solid",
+                            "width": "normal"
+                        },
+                        "type": null
+                    }
+                ],
+                "viz": "query_value"
+            },
+            "timeframe": "1h",
+            "title": true,
+            "title_align": "left",
+            "title_size": 16,
+            "title_text": "APM Host Count",
+            "type": "query_value",
+            "width": 26,
+            "x": 0,
+            "y": 20
+        },
+        {
+            "autoscale": true,
+            "board_id": 307156,
+            "height": 5,
+            "isShared": false,
+            "legend": false,
+            "legend_size": "0",
+            "tile_def": {
+                "autoscale": false,
+                "precision": "0",
+                "requests": [
+                    {
+                        "aggregator": "avg",
+                        "conditional_formats": [
+                            {
+                                "comparator": ">",
+                                "palette": "white_on_red",
+                                "value": null
+                            },
+                            {
+                                "comparator": ">=",
+                                "palette": "white_on_yellow",
+                                "value": null
+                            },
+                            {
+                                "comparator": "<",
+                                "palette": "white_on_green",
+                                "value": null
+                            }
+                        ],
+                        "q": "avg:datadog.usage.num_custom_timeseries{*}",
+                        "style": {
+                            "palette": "dog_classic",
+                            "type": "solid",
+                            "width": "normal"
+                        },
+                        "type": null
+                    }
+                ],
+                "viz": "query_value"
+            },
+            "timeframe": "1d",
+            "title": true,
+            "title_align": "left",
+            "title_size": 16,
+            "title_text": "Avg Custom Metrics Per Hour",
+            "type": "query_value",
+            "width": 27,
+            "x": 27,
+            "y": 20
+        },
+        {
+            "auto_refresh": false,
+            "bgcolor": "gray",
+            "board_id": 307156,
+            "font_size": "18",
+            "height": 5,
+            "html": "Please note: Usage metrics are in Beta and are delayed by 48 hours.",
+            "isShared": false,
+            "refresh_every": 30000,
+            "text_align": "left",
+            "tick": false,
+            "tick_edge": "left",
+            "tick_pos": "50%",
+            "title": true,
+            "title_align": "left",
+            "title_size": 16,
+            "title_text": "",
+            "type": "note",
+            "width": 54,
+            "x": 0,
+            "y": 0
+        }
+    ],
+    "width": "100%"
+}
