@@ -34,7 +34,7 @@ def format_standard_metrics(metrics, start_hr):
     metric_list = []
     for metric_dict in metrics:
         try:
-            for k, v in metric_dict.iteritems():
+            for k, v in metric_dict.items():
                 if k == 'hour':
                     if v != start_hr:
                         print('Incorrect hour for metrics. Aborting metric submission.')
